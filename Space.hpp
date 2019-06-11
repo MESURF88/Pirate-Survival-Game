@@ -2,7 +2,7 @@
 /******************************************************************************
 ** Program name: FinalProject
 ** Author: Kevin Hill
-** Date:  06/02/2019
+** Date:  06/10/2019
 ** Description: Class Specification file for Space. Declares variables.
 ******************************************************************************/
 

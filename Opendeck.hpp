@@ -1,7 +1,7 @@
 /******************************************************************************
 ** Program name: FinalProject
 ** Author: Kevin Hill
-** Date:  06/09/2019
+** Date:  06/10/2019
 ** Description: Class Specification file for Opendeck. Declares functions,
 **    constructors and variables.
 ******************************************************************************/

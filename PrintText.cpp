@@ -1,8 +1,9 @@
 /******************************************************************************
 ** Program name: FinalProject
 ** Author: Kevin Hill
-** Date:  05/31/2019
-** Description: Implementation file for PrintText.
+** Date:  06/10/2019
+** Description: Implementation file for PrintText. Has functions that display
+** the text for the game.
 *******************************************************************************/
 
 #include "PrintText.hpp"
@@ -17,8 +18,8 @@ PrintText::PrintText()
 
 /************************************************
 *             acceptInfo                        *
-*This function requests the user to press any   *
-*button to continue.                            *
+*This function requests the user to press the   *
+*Enter button to continue.                      *
 ************************************************/
 void PrintText::acceptInfo()
 {

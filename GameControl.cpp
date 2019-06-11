@@ -1,8 +1,11 @@
 /******************************************************************************
 ** Program name: FinalProject
 ** Author: Kevin Hill
-** Date:  05/31/2019
-** Description: Implementation file for GameControl.
+** Date:  06/10/2019
+** Description: Implementation file for GameControl. Implements the various
+** that control the game. Initializes settings, items, and player location.
+** loops the game until player wins loses or falls out of bounds. Controls
+** Requests user inputs at interactions and to move the character as well.
 *******************************************************************************/
 
 #include "GameControl.hpp"
@@ -24,7 +27,7 @@ GameControl::GameControl()
   in_session = 1;
   function_select = 0;
   steps = 0;
-  step_limit = 55;
+  step_limit = 60;
   f_x = 0;
   rope_attached = 0;
   wind_gust = 0;
@@ -37,7 +40,7 @@ GameControl::GameControl()
   move = 0;
   //index 0 setting, index 1, row, index 2 column
   player_data[0] = 0; player_data[1] = 0; player_data[2] = 0;
-  //Initialize inventory variables
+  //Initialize inventory variable
   get = 0;
 
   //Start program
@@ -65,8 +68,8 @@ GameControl::~GameControl()
 
 /************************************************
 *             accept                            *
-*This function requests the user to press any   *
-*button to continue.                            *
+*This function requests the user to press the   *
+*Enter button to continue.                      *
 ************************************************/
 void GameControl::accept()
 {
@@ -83,13 +86,13 @@ void GameControl::accept()
 ************************************************/
 int GameControl::requestInputs()
 {
-  move = 0;
-  function_select = 0;
-
+  move = 0;//reset move variables
+  function_select = 0;//reset function variable
   std::cout<<"\n"<<std::endl;
   std::cout<<"Would you like to move?"<<"\n"<<std::endl;
   std::cout<<"Enter w for up, a for left, s for down and d for right."<<"\n"<<std::endl;
   std::cout<<"Enter q to quit the game. After letter, press enter."<<"\n"<<std::endl;
+  //Loop request until valid input is input by user
   while (function_select == 0)
   {
     getline(std::cin,user_input1);
@@ -258,7 +261,7 @@ void GameControl::printMap()
 
 /************************************************
 *             inclementWind                     *
-*This function randomly by a chance of 25% blows*
+*This function randomly by a chance of 10% blows*
 *the ship with a wind gust. The step_limit is   *
 *decreased by 5 each call of this function.     *
 ************************************************/
@@ -536,9 +539,12 @@ void GameControl::transistionDown()
 
 /************************************************
 *             start                             *
-*This function asks the user to choose an option*
-*from the menu. then executes the function.     *
+*This function moves the player based on the    *
+*input given if valid move. Checks if player is *
+*is by an interaction and sets variable if true.*
 *Continues running until user quits to main menu*
+*wins the game, loses the game or goes out of   *
+*bounds, falls in water.                        *
 ************************************************/
 void GameControl::start()
 {

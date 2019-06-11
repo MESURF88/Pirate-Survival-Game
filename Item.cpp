@@ -1,8 +1,9 @@
 /******************************************************************************
 ** Program name: FinalProject
 ** Author: Kevin Hill
-** Date:  06/02/2019
-** Description: Implementation file for Item class.
+** Date:  06/10/2019
+** Description: Implementation file for Item class. Initializes the specific
+** item properties whether active or not.
 *******************************************************************************/
 
 #include "Item.hpp"

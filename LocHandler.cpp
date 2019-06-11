@@ -1,9 +1,11 @@
 /******************************************************************************
 ** Program name: FinalProject
 ** Author: Kevin Hill
-** Date:  06/09/2019
+** Date:  06/10/2019
 ** Description: Implementation file for LocHandler class. Sets and gets
-** LocHandler objects.
+** LocHandler objects. Has functions that detect if player is near an
+** interaction based on the setting. Also detects if player is allowed to move
+** if near object and if near door or even in the water.
 ******************************************************************************/
 
 
@@ -28,7 +30,7 @@ LocHandler::LocHandler()
 ************************************************/
 int LocHandler::locationCheck(const int *player_arr)
 {
-  //Galley
+  //Galley interactions
   if (player_arr[0] == 0)
   {
     if ((player_arr[1] == 2 && player_arr[2] == 1) || (player_arr[1] == 1 && player_arr[2] == 2))
@@ -44,7 +46,7 @@ int LocHandler::locationCheck(const int *player_arr)
       return 1;
     }
   }
-  //Hall 1
+  //Hall 1 interactions
   if (player_arr[0] == 1)
   {
     if (player_arr[1] == 3 && player_arr[2] == 4)
@@ -60,7 +62,7 @@ int LocHandler::locationCheck(const int *player_arr)
       return 1;
     }
   }
-  //Maindeck
+  //Maindeck interactions
   if (player_arr[0] == 2)
   {
     if ((player_arr[1] == 3 && player_arr[2] == 2) ||
@@ -80,7 +82,7 @@ int LocHandler::locationCheck(const int *player_arr)
       return 1;
     }
   }
-  //Hall 2
+  //Hall 2 interactions
   if (player_arr[0] == 3)
   {
     if (player_arr[1] == 3 && player_arr[2] == 4)
@@ -96,7 +98,7 @@ int LocHandler::locationCheck(const int *player_arr)
       return 1;
     }
   }
-  //Bowsprit
+  //Bowsprit interactions
   if (player_arr[0] == 4)
   {
     if ((player_arr[1] == 2 && player_arr[2] == 4) || (player_arr[1] == 1 && player_arr[2] == 3) || (player_arr[1] == 1 && player_arr[2] == 1))
@@ -112,7 +114,7 @@ int LocHandler::locationCheck(const int *player_arr)
       return 1;
     }
   }
-  //Opendeck
+  //Opendeck interactions
   if (player_arr[0] == 5)
   {
     if ((player_arr[1] == 1 && player_arr[2] == 3) || (player_arr[1] == 2 && player_arr[2] == 2) || (player_arr[1] == 1 && player_arr[2] == 4))
@@ -145,6 +147,7 @@ int LocHandler::upCheck(const int *player_arr)
   }
   else
   {
+    //Galley
     if (player_arr[0] == 0)
     {
       if (player_arr[1] == 2 && player_arr[2] == 1)
@@ -156,6 +159,7 @@ int LocHandler::upCheck(const int *player_arr)
         return 1;
       }
     }
+    //Maindeck
     if (player_arr[0] == 2)
     {
       if (player_arr[1] == 3 && player_arr[2] == 3)
@@ -167,6 +171,7 @@ int LocHandler::upCheck(const int *player_arr)
         return 1;
       }
     }
+    //Bowsprit
     if (player_arr[0] == 4)
     {
       if (player_arr[1] == 2 && player_arr[2] == 4)
@@ -178,6 +183,7 @@ int LocHandler::upCheck(const int *player_arr)
         return 1;
       }
     }
+    //Opendeck
     if (player_arr[0] == 5)
     {
       if (player_arr[1] == 2 && player_arr[2] == 2)
@@ -207,6 +213,7 @@ int LocHandler::leftCheck(const int *player_arr)
   }
   else
   {
+    //Galley
     if (player_arr[0] == 0)
     {
       if (player_arr[1] == 1 && player_arr[2] == 2)
@@ -218,6 +225,7 @@ int LocHandler::leftCheck(const int *player_arr)
         return 1;
       }
     }
+    //Maindeck
     if (player_arr[0] == 2)
     {
       if ((player_arr[1] == 2 && player_arr[2] == 4) || (player_arr[1] == 4 && player_arr[2] == 3))
@@ -229,6 +237,7 @@ int LocHandler::leftCheck(const int *player_arr)
         return 1;
       }
     }
+    //Bowsprit
     if (player_arr[0] == 5)
     {
       if (player_arr[1] == 1 && player_arr[2] == 3)
@@ -259,6 +268,7 @@ int LocHandler::downCheck(const int *player_arr)
   }
   else
   {
+    //Galley
     if (player_arr[0] == 0)
     {
       if (player_arr[1] == 5 && player_arr[2] == 5)
@@ -270,6 +280,7 @@ int LocHandler::downCheck(const int *player_arr)
         return 1;
       }
     }
+    //Maindeck
     if (player_arr[0] == 2)
     {
       if ((player_arr[1] == 3 && player_arr[2] == 2) || (player_arr[1] == 1 && player_arr[2] == 3))
@@ -299,6 +310,7 @@ int LocHandler::rightCheck(const int *player_arr)
   }
   else
   {
+    //Galley
     if (player_arr[0] == 0)
     {
       if (player_arr[1] == 5 && player_arr[2] == 5)
@@ -310,6 +322,7 @@ int LocHandler::rightCheck(const int *player_arr)
         return 1;
       }
     }
+    //Maindeck
     if (player_arr[0] == 2)
     {
       if ((player_arr[1] == 2 && player_arr[2] == 2) || (player_arr[1] == 4 && player_arr[2] == 1))
@@ -321,6 +334,7 @@ int LocHandler::rightCheck(const int *player_arr)
         return 1;
       }
     }
+    //Bowsprit
     if (player_arr[0] == 4)
     {
       if (player_arr[1] == 1 && player_arr[2] == 3)

@@ -1,7 +1,7 @@
 /******************************************************************************
 ** Program name: FinalProject
 ** Author: Kevin Hill
-** Date:  06/02/2019
+** Date:  06/10/2019
 ** Description: Implementation file for Space class.
 *******************************************************************************/
 
@@ -10,6 +10,7 @@
 
 Space::Space()
 {
+  //make pointers to next spaces NULL
   left = NULL;
   right = NULL;
   bottom = NULL;

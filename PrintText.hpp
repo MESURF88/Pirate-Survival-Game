@@ -2,7 +2,7 @@
 /******************************************************************************
 ** Program name: FinalProject
 ** Author: Kevin Hill
-** Date:  05/31/2019
+** Date:  06/10/2019
 ** Description: Class Specification file for PrintText. Declares functions,
 **    constructors and variables.
 ******************************************************************************/

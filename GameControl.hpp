@@ -2,7 +2,7 @@
 /******************************************************************************
 ** Program name: FinalProject
 ** Author: Kevin Hill
-** Date:  05/31/2019
+** Date:  06/10/2019
 ** Description: Class Specification file for GameControl. Declares functions,
 **    constructors and variables.
 ******************************************************************************/
@@ -27,6 +27,7 @@ class GameControl
 {
 private:
   //Declare private variables for GameControl
+  //General game flow variables
   int in_session;
   int function_select;
   int steps;
@@ -36,7 +37,8 @@ private:
   int rope_attached;
   int anchor_dropped;
   std::string resumeplay;
-  //player variable
+
+  //player variable holds position data in game
   int player_data[3];
   //player movement variables
   int move;
@@ -48,13 +50,14 @@ private:
   std::vector<Space*> settings;
   //Player points to specific setting in game
   Space *player;
+
   //Declare vector of inventory items
   std::vector<Item*> inventory;
   int get;
 
   //print text object initialization
   PrintText printer;
-  //determine lccation of player to see if in bounds object
+  //determine location of player object to see if in bounds or near interaction
   LocHandler check;
 public:
   //Constructors.
@@ -71,7 +74,6 @@ public:
   void transistionDown();
   int requestInputs();
   int requestActionObject();
-
   void accept();
   void start();
 };

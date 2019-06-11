@@ -1,7 +1,7 @@
 /******************************************************************************
 ** Program name: FinalProject
 ** Author: Kevin Hill
-** Date:  05/31/2019
+** Date:  06/10/2019
 ** Description: This function outputs the choices for a given program
 **              after the user selects a valid choice it is returned to main.
 ******************************************************************************/

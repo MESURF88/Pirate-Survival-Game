@@ -1,7 +1,7 @@
 /******************************************************************************
 ** Program name: FinalProject
 ** Author: Kevin Hill
-** Date:  06/09/2019
+** Date:  06/10/2019
 ** Description: Class Specification file for LocHandler. Declares functions,
 **    constructors and variables.
 ******************************************************************************/
@@ -27,7 +27,6 @@ public:
   int leftCheck(const int *);
   int downCheck(const int *);
   int rightCheck(const int *);
-
 
 };
 #endif
